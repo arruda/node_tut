@@ -1,3 +1,6 @@
-h2 New Document
-form(method='post', action='/documents')
-  include ../includes/documents/fields
+extends ../layout
+
+block content 
+    h2 New Document
+    form(method='post', action='/documents')
+      include ../includes/documents/fields
