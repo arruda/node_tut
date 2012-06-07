@@ -1,0 +1,21 @@
+!!!
+html
+  head
+    title= 'Nodepad'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/application.js')
+//  body!= body //wtf?!
+
+h1 Your Documents
+
+p
+  a(class='button', href='/documents/new') + New Document
+
+ul
+  - for (var d in documents)
+    li
+      a(class='button', href='/documents/' + documents[d].id + '/edit') Edit       
+      a(class='button destroy', href='/documents/' + documents[d].id) Delete 
+      a(href='/documents/' + documents[d].id) 
+        =documents[d].title
